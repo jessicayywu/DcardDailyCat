@@ -4,7 +4,7 @@ function postDcard() {
                   (today.getMonth() + 1) + '/' +
                   today.getDate();
   
-  var url = 'https://www.dcard.tw/_api/forums/whysoserious/posts';
+  var url = 'https://www.dcard.tw/service/api/v2/forums/whysoserious/posts';
   var options = {
     'method': 'post',
     'contentType': 'application/json',
@@ -16,7 +16,8 @@ function postDcard() {
       'withNickname':false}),
     'headers': {
        'x-csrf-token': '[Your x-csrf-token]',
-       'cookie':  'dcard-web.sig=[YOUR dcard-web.sig];'
+       'authorization': '[Your x-csrf-token]',
+       'cookie':  'dcard-web.sig=[YOUR authorization];'
                 + 'dcard=[YOUR dcard];'
                 + 'dcard.sig=[YOUR dcard.sig];'
                 + 'dcsrd=[YOUR dcsrd];'
