@@ -1,27 +1,23 @@
 function postDcard() {
-  var today = new Date();
-  var todayText = today.getFullYear() + '/' +
-                  (today.getMonth() + 1) + '/' +
-                  today.getDate();
   
-  var url = 'https://www.dcard.tw/service/api/v2/forums/whysoserious/posts';
+  var url = 'https://www.dcard.tw/service/api/v2/forums/[FORUM_NAME]/posts';
   var options = {
     'method': 'post',
     'contentType': 'application/json',
     'payload': JSON.stringify({
-      'title': '每日一貓 (' + todayText + ')',
-      'content': '今天的隨機貓貓\n\n'+ getRandomCat() + '\n喵~ฅ(=●ω●=)ฅ',
-      'anonymous':true,
-      'topics':['每日一貓'],
-      'withNickname':false}),
+      'title': '[TITLE]',
+      'content': '[CONTENT]',
+      'anonymous':true, // 是否隱藏科系
+      'topics':['[TOPIC1]', '[TOPIC2]'], // 話題標籤
+      'withNickname':false}), // 是否使用卡稱
     'headers': {
-       'x-csrf-token': '[Your x-csrf-token]',
-       'authorization': '[Your x-csrf-token]',
-       'cookie':  'dcard-web.sig=[YOUR authorization];'
-                + 'dcard=[YOUR dcard];'
-                + 'dcard.sig=[YOUR dcard.sig];'
-                + 'dcsrd=[YOUR dcsrd];'
-                + 'dcsrd.sig=[YOUR dcsrd.sig];'
+       'x-csrf-token': '[YOUR_x-csrf-token]',
+       'authorization': '[YOUR_x-csrf-token]',
+       'cookie':  'dcard-web.sig=[YOUR_authorization];'
+                + 'dcard=[YOUR_dcard];'
+                + 'dcard.sig=[YOUR_dcard.sig];'
+                + 'dcsrd=[YOUR_dcsrd];'
+                + 'dcsrd.sig=[YOUR_dcsrd.sig];'
     }  
   };
   var res = UrlFetchApp.fetch(url, options);
@@ -44,11 +40,10 @@ function uploadToImgur(catURL) {
     'payload': JSON.stringify({
       'image': catURL,
       'type': 'URL',
-      'title': 'Daily Random Cat',
-      'description': 'Meow'}),
+      'title': '[IMG_TITLE]',
+      'description': '[IMG_DESCRIPTION]'}),
     'headers': {
-       'Authorization': 'Client-ID f0ea04148a54268',
-//       'origin': 'https://www.dcard.tw',
+       'Authorization': 'Client-ID [YOUR_CLIENT_ID]',
     }  
   };
   var res = UrlFetchApp.fetch(url, options);
