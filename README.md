@@ -113,8 +113,8 @@ function postDcard() {
       'title': '[TITLE]',
       'content': '[CONTENT]',
       'anonymous':true, // 是否隱藏科系
-      'topics':['[TOPIC1]', '[TOPIC2]'], //話題標籤
-      'withNickname':false}), //是否使用卡稱
+      'topics':['[TOPIC1]', '[TOPIC2]'], // 話題標籤
+      'withNickname':false}), // 是否使用卡稱
     'headers': {
        'x-csrf-token': '[YOUR_x-csrf-token]',
        'authorization': '[YOUR_x-csrf-token]',
