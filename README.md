@@ -1,5 +1,5 @@
 # Dcard Daily Cat
-每天 PO 一隻隨機貓貓到 Dcard 的 小程式
+每天 PO 一隻隨機貓貓到 Dcard 的小程式
   
 ---
   
