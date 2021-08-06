@@ -1,4 +1,4 @@
-# DcardDailyCat
+# Dcard Daily Cat
 每天 PO 一隻隨機貓貓到 Dcard 的 小程式
   
 ---
@@ -135,7 +135,7 @@ function postDcard() {
 1. 開啟瀏覽器的開發人員工具 > Network  
 2. 隨便做點動作（例如切換看板）  
 3. Filter 輸入 api  
-
+  
 ![Dcard-02](img/dcard02.png)  
 4. 隨便點一個 Request  
 5. 從 Headers > Request Headers > cookie 尋找以下所需 cookie 並填入程式碼。
