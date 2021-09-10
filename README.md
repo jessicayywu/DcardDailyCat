@@ -99,6 +99,7 @@ function uploadToImgur(catURL) {
 ---
   
 ## Dcard API
+(本段已無法使用)
 發文到 Dcard
 
 程式碼：  
